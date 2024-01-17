@@ -1,4 +1,4 @@
-package com.example.itheima.Pojo;
+package com.example.itheima.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

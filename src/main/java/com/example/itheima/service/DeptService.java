@@ -8,4 +8,6 @@ public interface DeptService {
 
     public List getDeptList();
 
+    public void deleteDept(int id);
+
 }

@@ -1,5 +1,6 @@
 package com.example.itheima.controller;
 
+import com.example.itheima.mapper.DeptMapper;
 import com.example.itheima.pojo.Dept;
 import com.example.itheima.pojo.Result;
 import com.example.itheima.service.DeptService;
@@ -28,4 +29,16 @@ public class DeptController {
         deptService.deleteDept(id);
         return Result.success();
     }
+
+    @PostMapping
+    private Result addDept(@RequestBody Dept dept){
+        //记录日志
+        log.info("新增部门：{}",dept);
+        //调用service层添加功能
+        deptService.addDept(dept);
+        //响应
+        return Result.success();
+    }
+
+
 }

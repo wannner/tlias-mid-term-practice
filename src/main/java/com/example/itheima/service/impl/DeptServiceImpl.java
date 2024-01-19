@@ -38,4 +38,9 @@ public class DeptServiceImpl implements DeptService {
     public Dept getDeptById(int id) {
         return deptMapper.getDeptById(id);
     }
+
+    @Override
+    public void updateDept(Dept dept) {
+        deptMapper.updateDept(dept);
+    }
 }

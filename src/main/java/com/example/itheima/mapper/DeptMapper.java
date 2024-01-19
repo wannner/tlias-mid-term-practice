@@ -2,10 +2,8 @@ package com.example.itheima.mapper;
 
 import com.example.itheima.pojo.Dept;
 import com.example.itheima.pojo.Result;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
+
 import java.util.*;
 
 
@@ -22,6 +20,9 @@ public interface DeptMapper {
 
     @Select("select * from dept where id=#{id}")
     public Dept getDeptById(int id);
+
+    @Update("update dept set name=#{name} where id=#{id}")
+    public void updateDept(Dept dept);
 
 
 }

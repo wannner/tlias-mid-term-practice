@@ -6,11 +6,10 @@ import com.example.itheima.service.EmpService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 
 @Slf4j
@@ -31,5 +30,15 @@ public class EmpController {
         PageBean pageBean = empService.listSearchEmp(name, gender, begin, end, page, pageSize);
         return Result.success(pageBean);
     }
+
+    @DeleteMapping("/emps/{ids}")
+    private Result deleteEmp(@PathVariable List<Integer> ids) {
+        log.info("删除员工，参数：{}", ids);
+        empService.deleteEmp(ids);
+        return Result.success();
+    }
+
+    //批量删除
+
 
 }

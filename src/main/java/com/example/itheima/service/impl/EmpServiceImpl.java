@@ -23,4 +23,9 @@ public class EmpServiceImpl implements EmpService {
         pageBean.setTotal(total);
         return pageBean;
     }
+
+    @Override
+    public void deleteEmp(List ids) {
+        empMapper.deleteEmp(ids);
+    }
 }

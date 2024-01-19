@@ -3,6 +3,7 @@ package com.example.itheima.service;
 import com.example.itheima.pojo.PageBean;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public interface EmpService {
     public PageBean listSearchEmp(String name,
@@ -11,4 +12,6 @@ public interface EmpService {
                                   LocalDate end,
                                   Integer page,
                                   Integer pageSize);
+
+    public void deleteEmp(List id);
 }

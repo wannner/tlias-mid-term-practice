@@ -20,5 +20,6 @@ public interface EmpMapper {
     @Select("select count(*) from tlias.emp")
     public Long countSearchEmp();
 
+    public void deleteEmp(List ids);
 
 }

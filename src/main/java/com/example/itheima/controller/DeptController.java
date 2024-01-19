@@ -40,5 +40,11 @@ public class DeptController {
         return Result.success();
     }
 
+    @GetMapping("/{id}")
+    private Result searchById(@PathVariable("id")int id){
+        Dept dept=deptService.getDeptById(id);
+        return Result.success(dept);
+    }
+
 
 }

@@ -33,4 +33,9 @@ public class DeptServiceImpl implements DeptService {
         //调用持久层增加功能
         deptMapper.addDept(dept);
     }
+
+    @Override
+    public Dept getDeptById(int id) {
+        return deptMapper.getDeptById(id);
+    }
 }

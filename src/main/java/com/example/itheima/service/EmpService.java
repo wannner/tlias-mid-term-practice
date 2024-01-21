@@ -21,4 +21,8 @@ public interface EmpService {
     public void addEmp(Emp emp);
 
     public String upload(MultipartFile image) throws IOException;
+
+    public void updateEmp(Emp emp);
+
+    public Emp searchEmpById(int id);
 }

@@ -49,4 +49,15 @@ public class EmpServiceImpl implements EmpService {
     public String upload(MultipartFile image) throws IOException {
         return aliOSSUtils.upload(image);
     }
+
+    @Override
+    public void updateEmp(Emp emp) {
+        emp.setUpdateTime(LocalDateTime.now());
+        empMapper.updateEmp(emp);
+    }
+
+    @Override
+    public Emp searchEmpById(int id) {
+        return empMapper.searchEmpById(id);
+    }
 }

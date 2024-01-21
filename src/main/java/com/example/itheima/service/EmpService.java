@@ -1,7 +1,10 @@
 package com.example.itheima.service;
 
+import com.example.itheima.pojo.Emp;
 import com.example.itheima.pojo.PageBean;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -14,4 +17,8 @@ public interface EmpService {
                                   Integer pageSize);
 
     public void deleteEmp(List id);
+
+    public void addEmp(Emp emp);
+
+    public String upload(MultipartFile image) throws IOException;
 }

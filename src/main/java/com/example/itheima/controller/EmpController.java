@@ -1,5 +1,6 @@
 package com.example.itheima.controller;
 
+import com.example.itheima.pojo.Emp;
 import com.example.itheima.pojo.PageBean;
 import com.example.itheima.pojo.Result;
 import com.example.itheima.service.EmpService;
@@ -7,7 +8,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -38,7 +41,18 @@ public class EmpController {
         return Result.success();
     }
 
-    //批量删除
+    @PostMapping("/emps")
+    private Result addEmp(@RequestBody Emp emp) {
+        empService.addEmp(emp);
+        return Result.success();
+    }
+
+    @PostMapping("/upload")
+    private Result upload(MultipartFile image) throws IOException {
+        log.info("上传图片，参数：{}", image.getOriginalFilename());
+        String url = empService.upload(image);
+        return Result.success(url);
+    }
 
 
 }

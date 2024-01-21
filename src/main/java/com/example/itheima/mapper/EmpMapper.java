@@ -1,6 +1,7 @@
 package com.example.itheima.mapper;
 
 import com.example.itheima.pojo.Emp;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -21,5 +22,8 @@ public interface EmpMapper {
     public Long countSearchEmp();
 
     public void deleteEmp(List ids);
+
+    @Insert("insert into tlias.emp(username,name, gender, image, job, entrydate, dept_id, create_time, update_time)  values(#{username},#{name},#{gender},#{image},#{job},#{entrydate},#{deptId},#{createTime},#{updateTime})")
+    public void addEmp(Emp emp);
 
 }

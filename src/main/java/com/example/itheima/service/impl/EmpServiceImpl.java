@@ -60,4 +60,9 @@ public class EmpServiceImpl implements EmpService {
     public Emp searchEmpById(int id) {
         return empMapper.searchEmpById(id);
     }
+
+    @Override
+    public Emp login(Emp emp) {
+        return empMapper.login(emp);
+    }
 }

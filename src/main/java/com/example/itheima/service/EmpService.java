@@ -25,4 +25,6 @@ public interface EmpService {
     public void updateEmp(Emp emp);
 
     public Emp searchEmpById(int id);
+
+    public Emp login(Emp emp);
 }

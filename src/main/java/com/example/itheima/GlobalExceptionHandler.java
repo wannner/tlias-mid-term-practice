@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class GlobalExceptionHandler {
 
 
-    //处理异常
+    //处理异常a
     @ExceptionHandler(Exception.class) //指定能够处理的异常类型
     public Result ex(Exception e) {
         e.printStackTrace();//打印堆栈中的异常信息

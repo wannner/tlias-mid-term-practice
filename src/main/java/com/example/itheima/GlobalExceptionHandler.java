@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
+
     //处理异常
     @ExceptionHandler(Exception.class) //指定能够处理的异常类型
     public Result ex(Exception e) {
